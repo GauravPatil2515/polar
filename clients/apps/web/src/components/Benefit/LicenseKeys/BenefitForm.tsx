@@ -155,10 +155,11 @@ export const LicenseKeysBenefitForm = () => {
             control={control}
             name="properties.activations.limit"
             render={({ field }) => {
+              const value = field.value || ''
               return (
                 <FormItem>
                   <FormControl>
-                    <Input {...field} />
+                    <Input type="number" min={1} {...{ ...field, value }} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
